@@ -1,0 +1,28 @@
+/*NavBar*/
+.navbar-nav a{
+  font-size:18px;
+}
+
+/* Login */
+.form-control{
+  max-width: 35rem;
+}
+.login-form{
+  margin-top: 10rem;
+}
+.form-label{
+  font-size: 20px;
+}
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Register */
+
+.register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
