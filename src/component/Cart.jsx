@@ -16,8 +16,7 @@ const Cart = () => {
   const handleClear =(item)=>{
     
     dispatch(clearCart(item));
-    alert("Thank you for your purchase support!"); 
-    window.location.reload(); 
+    alert("Thank you for your purchase and support!");  
   }
 
   const emptyCart = () => {
@@ -92,7 +91,7 @@ const Cart = () => {
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
       {state.length !== 0 && buttons()}
-      {state.length=0}
+      {state.length !==0 && state.length ==0}
     </div>
   );
 };
