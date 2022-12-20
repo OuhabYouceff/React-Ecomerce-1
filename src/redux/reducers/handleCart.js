@@ -33,6 +33,14 @@ const handleCart = (state = cart, action) => {
         );
       }
       break;
+      
+    case "CLEARCART":
+      state.length=0
+      return(
+        state
+      )
+      
+        break;
 
     default:
       return state;

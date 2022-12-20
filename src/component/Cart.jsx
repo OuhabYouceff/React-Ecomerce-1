@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { addCart, delCart } from "../redux/action";
+import { addCart, delCart,clearCart } from "../redux/action";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -13,6 +13,12 @@ const Cart = () => {
   const handleDel = (item) => {
     dispatch(delCart(item));
   };
+  const handleClear =(item)=>{
+    
+    dispatch(clearCart(item));
+    alert("Thank you for your purchase support!"); 
+    window.location.reload(); 
+  }
 
   const emptyCart = () => {
     return (
@@ -22,6 +28,7 @@ const Cart = () => {
             <h3>Nothing inside your cart</h3>
           </div>
         </div>
+        
       </div>
     );
   };
@@ -67,10 +74,10 @@ const Cart = () => {
   const buttons = () => {
     return (
       <>
-        <div className="container" onClick={()=>emptyCart()}>
+        <div className="container" onClick={()=>handleClear()} >
           <div className="row">
             <NavLink
-              to="/"
+              to="/Cart"
               className="btn btn-outline-dark mb-5 w-25 mx-auto" 
             >
               Complete payment
@@ -85,6 +92,7 @@ const Cart = () => {
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
       {state.length !== 0 && buttons()}
+      {state.length=0}
     </div>
   );
 };
