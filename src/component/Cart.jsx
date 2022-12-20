@@ -17,6 +17,7 @@ const Cart = () => {
     
     dispatch(clearCart(item));
     alert("Thank you for your purchase and support!");  
+    window.location.reload();
   }
 
   const emptyCart = () => {
